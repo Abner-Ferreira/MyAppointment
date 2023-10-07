@@ -1,0 +1,4 @@
+INSERT INTO Appointment (title, date, description, local, status) VALUES ('Otorrino', '11/10/2023' ,'Ir ao otorrino pela manha', 'Rua das dores - 157, SP', 30);
+INSERT INTO Appointment (title, date, description, local, status) VALUES ('Dentista', '05/10/2023', 'Ir ao dentista as 18 horas', 'Rua tiradentes - 151, SP', 100);
+INSERT INTO Appointment (title, date, description, local, status) VALUES ('Clinico Geral', '07/09/2023', 'Levar José para o clinico geral as 14 horas ', 'Avenida das clinicas - 142, SP', 80);
+INSERT INTO Appointment (title, date, description, local, status) VALUES ('Raio-X', '24/11/2023', 'Realizar Raio-X do toráx', 'Avenida da chapa quente - 237', 0);

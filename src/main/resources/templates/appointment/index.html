@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>My Appointment</title>
+</head>
+
+<body class="grey lighten-3">
+
+    <nav>
+        <div class="nav-wrapper blue">
+            <a href="#" class="brand-logo">My Appointment</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li class="active"><a href="/appointment">pendendes</a></li>
+                <li><a href="#">concluídas</a></li>
+                <li><a href="#">usuários</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="card-panel teal accent-3" th:if="${success}" th:text="${success}"></div>
+        <div class="card-panel red darken-4 white-text" th:if="${error}" th:text="${error}"></div>
+
+        <h2>Consultas Pendentes</h2>
+
+        <div class="row">
+            <div class="col s12 m6" th:each="appointment : ${appointments}" >
+                <div class="card">
+                    <div class="card-content">
+                        <div class="progress">
+                            <div class="determinate blue" th:style="${'width:' + appointment.status + '%'}"></div>
+                        </div>
+                        <span class="card-title" th:text="${appointment.title} + ' - ' + ${appointment.date}"></span>
+                        <p th:text="${appointment.description}"></p>
+                        
+                    </div>
+                    <div class="card-action">
+                        <a th:href="${'/appointment/delete/' + appointment.id}" class="btn light-red">
+                            <i class="material-icons">delete</i>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large blue" title="adicionar consulta">
+          <i class="large material-icons">add</i>
+        </a>
+      </div>
+
+
+</body>
+
+</html>
