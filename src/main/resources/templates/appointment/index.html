@@ -38,7 +38,7 @@
                         </div>
                         <span class="card-title" th:text="${appointment.title} + ' - ' + ${appointment.date}"></span>
                         <p th:text="${appointment.description}"></p>
-                        
+                        <p th:text="${appointment.local}"></p>
                     </div>
                     <div class="card-action">
                         <a th:href="${'/appointment/delete/' + appointment.id}" class="btn light-red">
@@ -52,7 +52,7 @@
     </div>
 
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large blue" title="adicionar consulta">
+        <a href="/appointment/new" class="btn-floating btn-large blue" title="adicionar consulta">
           <i class="large material-icons">add</i>
         </a>
       </div>
