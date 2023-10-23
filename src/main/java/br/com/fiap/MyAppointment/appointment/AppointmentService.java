@@ -15,17 +15,12 @@ public class AppointmentService {
         return repository.findAll();
     }
 
-    public boolean delete(Long id) {
-        var appointment = repository.findById(id);
-
-        if (appointment.isEmpty()) return false;
-
+    public void delete(Long id) {
         repository.deleteById(id);
-        return true;
     }
 
-    public void save(Appointment appointment) {
+    public void create(Appointment appointment) {
         repository.save(appointment);
     }
-    
+
 }

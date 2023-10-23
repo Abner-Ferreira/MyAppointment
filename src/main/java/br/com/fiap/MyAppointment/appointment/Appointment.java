@@ -15,22 +15,24 @@ import lombok.Data;
 @Entity
 @Data
 public class Appointment {
-    
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @NotBlank(message = "o campo titulo é obrigatório")
+    @NotBlank(message = "{appointment.title.not.blank}")
     String title;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd") 
+    @DateTimeFormat(pattern = "{app.date.dateformat}")
     String date;
 
-    @Size(min = 10, message = "a descrição deve ter pelo menos 10 caracteres")
+    @Size(min = 10, message = "{appointment.description.size}")
     String description;
 
-    @Size(min = 10, message = "o local é obrigatório")
+    @Size(min = 10, message = "{appointment.local.size}")
     String local;
 
-    @Min(0) @Max(100)
+    @Min(0)
+    @Max(100)
     Integer status;
 }
